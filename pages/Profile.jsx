@@ -58,6 +58,7 @@ export default function Profile() {
         
         if (response.data.success) {
             dispatch(setValueLogin(false));
+            dispatch(setUser({username:" "}));
             navigate("/",{replace:true});
         }
     }

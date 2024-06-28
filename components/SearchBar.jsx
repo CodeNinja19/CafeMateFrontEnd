@@ -1,0 +1,35 @@
+
+import Paper from '@mui/material/Paper';
+import InputBase from '@mui/material/InputBase';
+import Divider from '@mui/material/Divider';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
+
+export default function SearchBar({message,setMessage,search,deleteAll,filterToggle}) {
+  return (
+    <Paper
+      component="div"
+      sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width:"100%"  }}
+    >
+      <IconButton sx={{ p: '10px' }} aria-label="menu" onClick={()=> filterToggle( curr => !curr)}>
+        <MenuIcon />
+      </IconButton>
+      <InputBase
+        sx={{ ml: 1, flex: 1,width:"100%" }}
+        placeholder="Search a Cafe"
+        value={message}
+        inputProps={{ 'aria-label': 'Search a Cafe' }}
+        onChange={setMessage}
+      />
+      <IconButton type="button" sx={{ p: '10px' }} aria-label="search" onClick={search}>
+        <SearchIcon />
+      </IconButton>
+      <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+      <IconButton color="primary" sx={{ p: '10px' }} aria-label="directions" onClick={deleteAll}>
+        <DeleteForeverTwoToneIcon />
+      </IconButton>
+    </Paper>
+  );
+}

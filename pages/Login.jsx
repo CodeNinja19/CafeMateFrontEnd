@@ -1,12 +1,13 @@
 import { useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import { useSelector,useDispatch } from "react-redux";
-import {setValueLogin} from "../src/actions/index.js"
+import {setValueLogin,setUser} from "../src/actions/index.js"
 import axios from "axios";
 export default function Login(){
 
     let navigate = useNavigate();
     const loginState=useSelector((state)=> state.IsLoggedIn);
+    const user=useSelector(state => state.ChangeUser);
     const dispatch=useDispatch();
     const [formData,setFormData]=useState({username:"",password:""});
     const [error,setError]=useState("");
@@ -31,7 +32,13 @@ export default function Login(){
             setError(response.data.message);
         } else {
             dispatch(setValueLogin(true));
-            navigate("/",{replace:true});
+            const request=await axios.get("/api/getCurrentUser");
+            if (request.data.message) setError(request.data.message);
+            else {
+              dispatch(setUser({...JSON.parse(request.data)}));
+              console.log(request.data);
+              navigate("/",{replace:true});
+            }
         }
 
     }
