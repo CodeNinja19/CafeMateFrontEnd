@@ -4,6 +4,7 @@ import {setValueLogin,setUser} from "../src/actions/index.js"
 import { Outlet } from "react-router-dom"
 import axios from "axios"
 import Navbar from "../components/Navbar.jsx"
+import AskMe from "../components/AskMe.jsx";
 function App() {
   const loginState=useSelector((state)=> state.IsLoggedIn);
   const user=useSelector(state => state.ChangeUser);
@@ -36,9 +37,13 @@ function App() {
   },[])
   return (
     <>
-    
+    <div className="relative w-full">
       <Navbar/>
-      {allowRender && <Outlet/>}
+      {allowRender && 
+      <Outlet/>
+      }
+      <AskMe/>
+    </div>
     </>
   )
 }

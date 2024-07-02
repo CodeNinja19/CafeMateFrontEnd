@@ -53,7 +53,7 @@ export default function Navbar(){
             <AnimatePresence>
             {menu &&
             
-            <m.div className="fixed w-3/5 h-full top-0 right-0 z-50 shadow-2xl bg-white"
+            <m.div className="fixed w-3/5 h-full top-0 right-0 z-40 shadow-2xl bg-white"
                 initial={{ opacity: 0 ,x:"150%"}}
                 animate={{ opacity: 1,x:"0%" }}
                 exit={{ opacity: 0, x:"150%" }}
