@@ -1,5 +1,6 @@
 import { useState,useEffect } from "react";
 import Cafe from "./Cafe";
+import QuickLink from "./QuickLink";
 export default function FourCafe({category,number}){
     const [cafes,setCafes]=useState(null);
     useEffect(function (){
@@ -23,7 +24,12 @@ export default function FourCafe({category,number}){
     return (
         <>  
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                {cafes && cafes.map( e => <Cafe key={e._id} enter={{...e}}/>)}
+                
+                {cafes && cafes.map( e => 
+                <QuickLink to={`/Cafe?cafe_id=${e._id}`}>
+                <Cafe key={e._id} enter={{...e}}/>
+                </QuickLink>
+                )}
             </div>
 
         </>

@@ -4,6 +4,8 @@ import SearchCafe from "../components/SearchCafe";
 import Container from "@mui/material/Container";
 import { motion as m, AnimatePresence } from "framer-motion"
 import axios from "axios";
+import QuickLink from "../components/QuickLink";
+
 export default function Search(){
     const [searchName,setSearchName]=useState("");
     const [cafeData,setCafeData]=useState([]);
@@ -88,7 +90,9 @@ export default function Search(){
             <div className="mt-6">
                 <div className="flex flex-col gap-4">
                     {cafeData.map( e =>(
+                        <QuickLink to={`/Cafe?cafe_id=${e._id}`}>
                         <SearchCafe enter={e}/>
+                        </QuickLink>
                     ))}
                 </div>
                 <button onClick={moreSearch}>Show 10 more</button>

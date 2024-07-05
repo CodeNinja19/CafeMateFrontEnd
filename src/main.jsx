@@ -9,6 +9,7 @@ import Map from '../pages/Map.jsx';
 import Profile from '../pages/Profile.jsx';
 import Search from '../pages/Search.jsx';
 import SignUp from '../pages/SignUp.jsx';
+import CafeDisplay from '../pages/CafeDisplay.jsx';
 import ProtectRoute from '../components/ProtectRoute.jsx';
 import store from './store.js';
 import { Provider } from 'react-redux';
@@ -56,6 +57,10 @@ const router=createBrowserRouter([
       {
         path:"/SignUp",
         element:<SignUp/>
+      },
+      {
+        path:"Cafe",
+        element:<ProtectRoute><CafeDisplay/></ProtectRoute>,
       }
     ]
   },
