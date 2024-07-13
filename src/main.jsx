@@ -5,7 +5,7 @@ import About from '../pages/About.jsx';
 import Login from '../pages/Login.jsx';
 import Compare from '../pages/Compare.jsx';
 import Home from '../pages/Home.jsx';
-import Map from '../pages/Map.jsx';
+import Contact from '../pages/Contact.jsx';
 import Profile from '../pages/Profile.jsx';
 import Search from '../pages/Search.jsx';
 import SignUp from '../pages/SignUp.jsx';
@@ -38,8 +38,8 @@ const router=createBrowserRouter([
         element:<ProtectRoute><Compare/></ProtectRoute>,
       },
       {
-        path:"/Map",
-        element:<ProtectRoute><Map/></ProtectRoute>,
+        path:"/Contact",
+        element:<ProtectRoute><Contact/></ProtectRoute>,
       },
       {
         path:"/Search",

@@ -39,11 +39,12 @@ export default function Search(){
         if (data.message) console.log(data.message);
         else {
             setCafeData([...cafeData,...data.cafes]);
+            setPage(curr=> curr+1);
         }
     }
     const moreSearch=function(){
-        setPage(curr=> curr+1);
         onSearch();
+        setPage(curr=> curr+1);
     }
     return (
         <>

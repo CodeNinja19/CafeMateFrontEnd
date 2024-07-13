@@ -6,8 +6,24 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import DeleteForeverTwoToneIcon from '@mui/icons-material/DeleteForeverTwoTone';
+import { useRef,useEffect } from 'react';
 
 export default function SearchBar({message,setMessage,search,deleteAll,filterToggle}) {
+  // const myRef=useRef(null);
+  // useEffect(() => {
+  //   const listener = event => {
+  //     if (event.code === "Enter" || event.code === "NumpadEnter") {
+  //       console.log("Enter key was pressed. Run your function.");
+  //       event.preventDefault();
+  //       search();
+        
+  //     }
+  //   };
+  //   myRef.current.addEventListener("keydown", listener);
+  //   return () => {
+  //     document.removeEventListener("keydown", listener);
+  //   };
+  // }, []);
   return (
     <Paper
       component="div"

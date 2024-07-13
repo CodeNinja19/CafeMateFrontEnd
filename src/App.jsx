@@ -2,6 +2,7 @@ import { useState,useEffect } from "react"
 import { useSelector,useDispatch } from "react-redux";
 import {setValueLogin,setUser} from "../src/actions/index.js"
 import { Outlet } from "react-router-dom"
+import Footer from "../components/Footer.jsx";
 import axios from "axios"
 import Navbar from "../components/Navbar.jsx"
 import AskMe from "../components/AskMe.jsx";
@@ -43,6 +44,7 @@ function App() {
       <Outlet/>
       }
       <AskMe/>
+      <Footer/>
     </div>
     </>
   )

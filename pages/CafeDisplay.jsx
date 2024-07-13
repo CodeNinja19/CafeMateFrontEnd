@@ -1,10 +1,11 @@
 import { useSearchParams } from "react-router-dom";
 import {useState,useEffect} from "react"
 import { useNavigate } from "react-router-dom";
-import Cafe from "../components/Cafe";
+import CafeShow from "../components/CafeShow";
 import axios from "axios";
 import Flash from "../components/Flash";
 import Container from '@mui/material/Container';
+
 
 export default function CafeDisplay(){
     const [searchParams]=useSearchParams();
@@ -40,7 +41,7 @@ export default function CafeDisplay(){
         <>
             <Container maxWidth={false} sx={{maxWidth:"84rem"}}>
             {message && <Flash type="warning" message={message} duration={10*1000}/>}
-            {currCafe && <Cafe enter={{...currCafe}}/>}
+            {currCafe && <CafeShow cafe={{...currCafe}} setCafe={setCurrCafe}/>}
             </Container>
         </>
     );

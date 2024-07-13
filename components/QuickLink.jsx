@@ -5,9 +5,9 @@ export default function QuickLink(props){
     return (
         <NavLink to={props.to}
         className={({isActive})=>{
-            return isActive?"text-xl":"";
+            return isActive?"text-2xl font-semibold":"";
         }} 
-        >{props.children}
+        ><h1 className="hover:underline">{props.children}</h1>
         </NavLink> 
     );
 }

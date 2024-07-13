@@ -85,7 +85,7 @@ export default function Profile() {
                 <div className="w-full flex flex-col items-center gap-6 ">
                     <div className="flex flex-col items-center w-full gap-2">
                         <label htmlFor="address" className="text-lg">Address</label>
-                        <input type="text" value={user.address} name="address" id="address" className="w-[90%] h-24 border rounded-md" onChange={formChange} disabled={!changes}/>
+                        <textarea type="text" value={user.address} name="address" id="address" className="w-[90%] min-h-24 border rounded-md" onChange={formChange} disabled={!changes}/>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 justify-center w-full">
                         {changes &&

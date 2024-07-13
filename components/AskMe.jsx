@@ -7,6 +7,8 @@ import { setUser } from "../src/actions";
 import SendIcon from '@mui/icons-material/Send';
 import axios from "axios";
 import Flash from "./Flash";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function AskMe(){
 
@@ -47,14 +49,14 @@ export default function AskMe(){
         <>
             {
                 !open &&
-                <button className="w-16 h-16 z-30 border rounded-full fixed bottom-0 right-0 mr-4 mb-4 bg-black overflow-hidden flex justify-center" onClick={toggle}>
+                <button className="w-16 h-16 z-30 border rounded-full fixed bottom-0 right-0 mr-5 mb-6 bg-black overflow-hidden flex justify-center" onClick={toggle}>
                     <img src={ai_assistant} className="w-full "/>
                 </button>
             }
             <AnimatePresence>
             {
                 open &&
-                <m.div className="h-screen z-30 bg-white w-[70%] md:w-[65%] lg:w-[45%] xl:w-[38%] fixed top-0 right-0"
+                <m.div className=" bg-[#b2b1d8d3]  h-screen z-30  md:w-[70%] lg:w-[65%] xl:w-[60%] fixed top-0 right-0"
                     initial={{ opacity: 0 ,x:"150%"}}
                     animate={{ opacity: 1,x:"0%" }}
                     exit={{ opacity: 0, x:"150%" }}
@@ -67,20 +69,20 @@ export default function AskMe(){
                     </button>
                 </div>
                 <h1 className="text-4xl font-bold">Ask The AI</h1>
-                <div className="w-[90%] h-[75%] rounded-md border border-black overflow-x-hidden">
+                <div className="w-[90%] h-[75%] rounded-md shadow-md overflow-x-hidden">
                     {user.chat && 
                         user.chat.contents.map( e =>{
                             let txt=e.parts[0].text;
                             let role=e.role;
                             if (role=="model"){
                                 return (
-                                <h1 className="rounded-lg p-2 bg-cyan-200 ">
-                                    {txt}
+                                <h1 className="rounded-lg px-2 bg-[#71c2e5] py-4">
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{txt}</ReactMarkdown>
                                 </h1>);
                             } else {
                                 return (
-                                <h1 className="text-right rounded-lg p-2 bg-green-300 ">
-                                    {txt}
+                                <h1 className="text-right rounded-lg px-2 bg-green-300 py-4 ">
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{txt}</ReactMarkdown>
                                 </h1>)
                             }
                         })
