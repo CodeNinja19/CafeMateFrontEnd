@@ -7,7 +7,7 @@ export default function QuickLink(props){
         className={({isActive})=>{
             return isActive?"text-2xl font-semibold":"";
         }} 
-        ><h1 className="hover:underline">{props.children}</h1>
+        ><h1 className="hover:underline duration-500">{props.children}</h1>
         </NavLink> 
     );
 }

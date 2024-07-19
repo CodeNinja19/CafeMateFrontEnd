@@ -24,7 +24,7 @@ export default function Navbar(){
                 {/* inner parent to give to allow for paddings */}
                 <div className=" w-full flex justify-between items-center h-16 my-auto">
                 {/* for logo */}
-                <div><QuickLink to="/"><img src={logo} className="w-16 md:w-20 hover:opacity-50" alt="logo"/></QuickLink></div>
+                <div><QuickLink to="/"><img src={logo} className="w-16 md:w-20 hover:opacity-75 duration-500" alt="logo"/></QuickLink></div>
                 {
                 !navCollapse &&
                 <ul className="flex justify-between items-center space-x-4 lg:space-x-10">
@@ -32,7 +32,7 @@ export default function Navbar(){
                     <QuickLink to="/Search"><li>Search</li></QuickLink>
                     <QuickLink to="/About"><li>About</li></QuickLink>
                     <QuickLink to="/Contact"><li>Contact</li></QuickLink>
-                    <QuickLink to="/Compare"><li>Compare</li></QuickLink>
+                    {/* <QuickLink to="/Compare"><li>Compare</li></QuickLink> */}
                     <li><LoginButton/></li>
                 </ul>
                 }
@@ -73,7 +73,7 @@ export default function Navbar(){
                 <QuickLink to="/Search"><li>Search</li></QuickLink>
                 <QuickLink to="/About"><li>About</li></QuickLink>
                 <QuickLink to="/Contact"><li>Contact</li></QuickLink>
-                <QuickLink to="/Compare"><li>Compare</li></QuickLink>
+                {/* <QuickLink to="/Compare"><li>Compare</li></QuickLink> */}
             </ul>
             </m.div>
             }

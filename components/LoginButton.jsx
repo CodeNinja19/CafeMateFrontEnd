@@ -39,7 +39,7 @@ export default function LoginButton(){
     {loginState && 
         <div>
             {user && 
-            <img src={`data:image/jpeg;base64,${user.profileImage}`} placeholder="user" className="w-8 aspect-square hover:opacity-60 " onClick={profile}/>
+            <img src={`data:image/jpeg;base64,${user.profileImage}`} placeholder="user" className="w-8 aspect-square hover:opacity-60 duration-500 " onClick={profile}/>
             }
         </div>
     }

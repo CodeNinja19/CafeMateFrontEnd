@@ -5,6 +5,7 @@ import Container from "@mui/material/Container";
 import { motion as m, AnimatePresence } from "framer-motion"
 import axios from "axios";
 import QuickLink from "../components/QuickLink";
+import Flash from "../components/Flash"
 
 export default function Search(){
     const [searchName,setSearchName]=useState("");
@@ -49,7 +50,9 @@ export default function Search(){
     return (
         <>
         <Container maxWidth={false} sx={{maxWidth:"84rem"}}>
-            <div className="px-4 mt-6 border rounded-lg">
+            <Flash duration={1000*60*5} type="success" message="Please click on search button to search and can click on product to see them individually"/>
+
+            <div className="px-4 mt-6 border rounded-lg h-screen overflow-y-auto py-4 shadow-lg">
             <SearchBar message={searchName} setMessage={handleChange} search={onSearch} deleteAll={deleteAll} filterToggle={setShowFilter}/>
             <AnimatePresence>
             {showFilter &&
@@ -89,6 +92,12 @@ export default function Search(){
             }
             </AnimatePresence>
             <div className="mt-6">
+                {cafeData.length==0 &&
+                    <div className="flex justify-center items-center text-center h-[24rem]">
+                        <h1 className=" text-6xl sm:text-[7rem] md:text-[9rem] font-semibold text-gray-400">Search Cafes...</h1>
+                    </div>
+                }
+                {cafeData.length>0 &&
                 <div className="flex flex-col gap-4">
                     {cafeData.map( e =>(
                         <QuickLink to={`/Cafe?cafe_id=${e._id}`}>
@@ -96,7 +105,10 @@ export default function Search(){
                         </QuickLink>
                     ))}
                 </div>
-                <button onClick={moreSearch}>Show 10 more</button>
+                } 
+                {cafeData.length>0 &&  
+                <button onClick={moreSearch} className="border bg-black text-white text-lg px-2 py-3 rounded-md hover:opacity-50 duration-500">Show 10 more</button>
+                }
             </div>
             </div>
         </Container>
