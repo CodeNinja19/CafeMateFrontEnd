@@ -23,9 +23,12 @@ export default function Footer() {
             <div id="about" className="flex flex-col items-center mt-5 md:w-1/3">
                 {/* <img src={logo} alt="organic logo" /> */}
                 <h1 className="text-6xl font-bold text-white">About Us</h1>
-                <p className="w-3/6 text-center text-slate-400 mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Nemo tenetur est modi excepturi exercitationem, minus aliquam omnis,
-                    quaerat quod sunt molestiae perferendis distinctio
+                <p className="w-3/6 text-center text-slate-400 mt-5">Welcome to Café Explorer, your
+                 ultimate guide to discovering the best cafes in town! Our app showcases nearly 300 
+                 unique cafes, each offering a distinct ambiance and menu. Whether you're seeking a 
+                 cozy spot for a quiet coffee or a lively café for socializing, Café Explorer has you 
+                 covered. Join us on a journey to explore new flavors, meet new people, and find your 
+                 favorite café experience today!
                 </p>
             </div>
             <div id="general info" className="md:flex">
