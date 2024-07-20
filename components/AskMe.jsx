@@ -1,6 +1,6 @@
 import {useState,useEffect} from "react"
 import ClearIcon from '@mui/icons-material/Clear';
-import ai_assistant from "../assets/ai_assistant.avif"
+import ai_assistant from "../assets/AskmeLogo.gif"
 import { motion as m, AnimatePresence } from "framer-motion"
 import { useSelector,useDispatch } from "react-redux";
 import { setUser } from "../src/actions";
@@ -49,7 +49,7 @@ export default function AskMe(){
         <>
             {
                 !open &&
-                <button className="w-16 h-16 z-30 border rounded-full fixed bottom-0 right-0 mr-5 mb-6 bg-black overflow-hidden flex justify-center" onClick={toggle}>
+                <button className="w-16 h-16 z-30 border rounded-full fixed bottom-0 right-0 mr-5 mb-6 bg-[url(../assets/AskmeLogo.gif)] overflow-hidden flex justify-center" onClick={toggle}>
                     <img src={ai_assistant} className="w-full "/>
                 </button>
             }
